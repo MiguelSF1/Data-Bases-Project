@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ types.Name }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Type info</h2>
+  <p>
+    <b>TypeId: </b>{{ types.TypeId }}
+  </p>
+  <p>
+    <b>Name: </b>{{ types.Name }}
+  </p>
+  <p>
+    <b>Pokemons: </b><ul>
+    {% for p  in pokemons %}      
+      <li><a href="/pokemons/{{ p.PokId }}">{{ p.Name }}</a></li>
+    {% endfor %}
+  </ul>
+  <p>
+    <b>DAMAGE DEALT MULTIPLIER: </b><ul>
+    {% for e  in effec %}      
+     <li><a href="/types/{{ e.TypeId }}">{{ e.Name }}</a></li>
+     <li>DmgMult: {{e.DmgMult}}</a></li>
+    {% endfor %}
+  </ul>
+  <p>
+    <b>DAMAGE TAKEN MULTIPLIER: </b><ul>
+    {% for r  in resis %}      
+     <li><a href="/types/{{ r.TypeId }}">{{ r.Name }}</a></li>
+     <li>DmgMult: {{r.DmgMult}}</a></li>
+    {% endfor %}
+    </ul>
+  </p>
+{% endblock %}

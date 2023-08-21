@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ evo.Name }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Evolution Method info</h2>
+  <p>
+    <b>MetId: </b>{{ evo.MetId }}
+  </p>
+  <p>
+    <b>Name: </b>{{ evo.Name }}
+  </p>
+  <p>
+    <b>Pokemons: </b><ul>
+    {% for p  in pokemons %}      
+      <li><a href="/pokemons/{{ p.PokId }}">{{ p.Name }}</a></li>
+    {% endfor %}
+    </ul>
+  </p>
+{% endblock %}

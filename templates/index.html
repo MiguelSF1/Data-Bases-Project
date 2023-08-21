@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Pokemon database {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h2>About</h2>
+<p>This web application uses the Pokemon
+database. The application is built using 
+<a href="https://pymysql.readthedocs.io/">PyMySQL</a>,
+<a href="https://flask.palletsprojects.com">Flask</a>, and
+<a href="https://jinja.palletsprojects.com">Jinja</a>.
+</p>
+
+<h2>Some database statistics</h2>
+<table>
+<tr>
+  <th>Items</th>
+  <th>Count</th>
+</tr>
+<tr>
+  <td>Pokemons</td>
+  <td>{{ stats.Pokemons }}</td>
+</tr>
+<tr>
+  <td>Moves</td>
+  <td>{{ stats.Moves }}</td>
+</tr>
+<tr>
+  <td>Types</td>
+  <td>{{ stats.Types }}</td>
+</tr>
+</table>
+
+
+<h2>Pokemon data</h2>
+
+<h3>Pokemon</h3>
+<p>
+   <a href="/pokemons">List all</a>
+</p>
+<p>Get Pokemon info:
+<form name="mid" action="javascript:window.open('/pokemons/'+document.forms['mid'].elements['id'].value,'_self')">
+   PokId:<input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<p>Search by name:
+<form name="msearch" action="javascript:window.open('/pokemons/search/'+document.forms['msearch'].elements['expr'].value,'_self')">
+  <input name="expr" id="expr" value="Squirtle" required/>
+  <input type="submit" value="search"/>
+</form>
+</p> 
+
+<h3>Moves</h3>
+<p>
+   <a href="/moves">List all</a>
+</p>
+<p>Get move info:
+<form name="aid" action="javascript:window.open('/moves/'+document.forms['aid'].elements['id'].value,'_self')">
+    MoveId:<input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+  
+
+<h3>Types</h3>
+<p>
+   <a href="/types">List all</a>
+</p>
+
+<p>Get Type info:
+<form name="gid" action="javascript:window.open('/types/'+document.forms['gid'].elements['id'].value,'_self')">
+    TypeId:<input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<h3>Places</h3>
+<p>
+   <a href="/places">List all</a>
+</p>
+
+<p>Get Place info:
+<form name="gid" action="javascript:window.open('/locals/'+document.forms['gid'].elements['id'].value,'_self')">
+    LocalId:<input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+
+<h3>Evolution Methods</h3>
+<p>
+   <a href="/evo">List all</a>
+</p>
+
+<p>Get Evolution Method info:
+<form name="gid" action="javascript:window.open('/evo/'+document.forms['gid'].elements['id'].value,'_self')">
+    MetId:<input value="1" name="id" type="number" min="1"/><input type="submit" value="get"/>
+</form>
+</p>
+{% endblock %}

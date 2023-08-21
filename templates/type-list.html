@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Types{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>Id</b></th>
+    <th><b>Name</b></th>
+   </tr>
+   
+  {% for t in types %}
+    <tr>
+      <td><a href="/types/{{ t.TypeId }}">{{ t.TypeId }}</a></td>
+      <td>{{ t.Name }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

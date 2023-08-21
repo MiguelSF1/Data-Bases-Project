@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Pokemons{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>PokId</b></th>
+    <th><b>Name</b></th>
+    <th><b>Evolution PokId</b></th>
+    <th><b>Hp</b></th>
+    <th><b>Atk</b></th>
+    <th><b>Def</b></th>
+    <th><b>Spc</b></th>
+    <th><b>Spe</b></th>
+    <th><b>Evolution MetId</b></th>
+   </tr>
+   
+  {% for p in pokemons %}
+    <tr>
+      <td><a href="/pokemons/{{ p.PokId }}">{{ p.PokId }}</a></td>
+      <td>{{ p.Name }}</td>
+      <td>{{ p.Evolution }}</td>
+      <td>{{ p.Hp }}</td>
+      <td>{{ p.Atk }}</td>
+      <td>{{ p.Def }}</td>
+      <td>{{ p.Spc }}</td>
+      <td>{{ p.Spe }}</td>
+      <td>{{ p.MetId }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

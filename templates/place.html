@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ place.Label }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Place info</h2>
+  <p>
+    <b>LocalId: </b>{{ place.LocalId }}
+  </p>
+  <p>
+    <b>Name: </b>{{ place.Name }}
+  </p>
+  <p>
+    <b>Pokemons: </b><ul>
+    {% for p in pokemons %}      
+      <li><a href="/pokemons/{{ p.PokId }}">{{ p.Name }}</a></li>
+    {% endfor %}
+    </ul>
+  </p>
+{% endblock %}

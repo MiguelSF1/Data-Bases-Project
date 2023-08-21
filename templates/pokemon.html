@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ pokemon.Name }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Pokemon info</h2>
+  <p>
+    <b>PokId: </b>{{ pokemon.PokId }}
+  </p>
+  <p>
+    <b>Name: </b>{{ pokemon.Name }}
+  </p>
+  <p>
+    <b>Hp: </b>{{ pokemon.Hp }}
+  </p>
+  <p>
+    <b>Atk: </b>{{ pokemon.Atk }}
+  </p>
+  <p>
+    <b>Def: </b>{{ pokemon.Def }}
+  </p>
+  <p>
+    <b>Spc: </b>{{ pokemon.Spc }}
+  </p>
+  <p>
+    <b>Spe: </b>{{ pokemon.Spe }}
+  </p>
+  <p>
+    <b>Evolution Metid: </b>{{ pokemon.MetId }}
+  </p>
+  <p>
+    <b>Evolution from PokId: </b>{{ pokemon.Evolution }}
+  </p>
+  <p>
+    <b>Places: </b><ul>
+    {% for p in places %}
+      <li><a href="/places/{{ p.LocalId }}">{{ p.Name }}</a></li> 
+    {% endfor %}
+    </ul>
+  </p>
+  <p>
+    <b>Types: </b><ul>
+    {% for t in types %}      
+      <li><a href="/types/{{ t.TypeId }}">{{ t.Name }}</a></li>
+    {% endfor %}
+    </ul>
+  </p>
+  <p>
+    <b>Moves: </b><ul>
+    {% for m in moves %}      
+      <li><a href="/moves/{{ m.MoveId }}">{{ m.Name }}</a></li>
+    {% endfor %}
+  </ul></p>
+  {% if evo %}
+  <p>
+    <b>Evolution Method: </b><ul>
+    {% for e in evo %}      
+      <li><a href="/evo/{{ e.MetId }}">{{ e.Name }}</a></li>
+    {% endfor %}
+  </ul></p>
+  {% endif %}
+  
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Evolution Method{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>Name</b></th>
+  </tr>
+  {% for e in evo %}
+    <tr>
+      <td><a href="/evo/{{ e.MetId }}">{{ e.Name }}</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

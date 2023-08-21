@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}PLACES{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>Name</b></th>
+  </tr>
+  {% for p in places %}
+    <tr>
+      <td><a href="/places/{{ p.LocalId }}">{{ p.Name }}</a></td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Moves{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>MoveId</b></th>
+    <th><b>Name</b></th>
+    <th><b>BasePower</b></th>
+    <th><b>Acc</b></th>
+    <th><b>PP</b></th>
+    <th><b>TypeId</b></th>
+  </tr>
+  {% for m in moves %}
+    <tr>
+      <td><a href="/moves/{{ m.MoveId }}">{{ m.MoveId }}</a></td>
+      <td>{{ m.Name }}</td>
+      <td>{{ m.BasePower }}</td>
+      <td>{{ m.Acc }}</td>
+      <td>{{ m.PP }}</td>
+      <td>{{ m.Type }}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}

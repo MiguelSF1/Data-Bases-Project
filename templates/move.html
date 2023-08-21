@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ move.Name }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Move info</h2>
+  <p>
+    <b>MoveId: </b>{{ move.MoveId }}
+  </p>
+  <p>
+    <b>Name: </b>{{ move.Name }}
+  </p>
+  <p>
+  <b>BasePower: </b>{{ move.BasePower }}
+  </p>
+  <p>
+  <b>Acc: </b>{{ move.Acc }}
+  </p>
+  <p>
+  <b>PP: </b>{{ move.PP }}
+  </p>
+  <p>
+  <b>Type: </b>{{ move.Type }}
+  </p>
+  <p>
+    <b>Pokemons: </b><ul>
+    {% for p in pokemons %}      
+      <li><a href="/pokemons/{{ p.PokId }}">{{ p.Name }}</a></li>
+    {% endfor %}
+    </ul>
+  </p>
+{% endblock %}
