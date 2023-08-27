@@ -1,4 +1,4 @@
-# Project using mysql, html and python to make a webapp that uses data bases.
+# Project using mysql, html, css and python to make a webapp that uses data bases.
 
 
 
