@@ -1,11 +1,5 @@
-# Desenvolvimento de aplicação para projeto de base de dados.
-```
+# Project using mysql, html and python to make a webapp that uses data bases.
 
-## Execução do servidor da aplicação
-
-Execute o servidor fazendo python3 server.py
-
-De seguida abra no seu browser __http://127.0.0.1:9000
 
 
 
